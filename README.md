@@ -2,7 +2,7 @@
 
 A Python Card Based Game
 
-![alt text](https://github.com/Clayvis/BigBank_LittleBank/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/Clayvis/BigBank_LittleBank/blob/main/image%20(1).png?raw=true)
 
 
 ## Installation
