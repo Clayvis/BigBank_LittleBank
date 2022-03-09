@@ -2,6 +2,8 @@
 
 A Python Card Based Game
 
+![alt text](https://github.com/Clayvis/BigBank_LittleBank/blob/[branch]/image.jpg?raw=true)
+
 
 ## Installation
 
