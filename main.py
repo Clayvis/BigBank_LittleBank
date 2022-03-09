@@ -3,9 +3,10 @@
 # importing third party libraries
 import requests
 import io
-from tkinter import ttk
+from tkinter import messagebox, ttk
 from tkinter import *
 from PIL import Image, ImageTk
+from playsound import playsound
 
 # declare the tkinter module
 main = Tk()
@@ -16,6 +17,9 @@ r = requests.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
 # extracting json response and converting it into a dictionary called data
 
 data = r.json()
+
+def play():
+    playsound('./assests/cardDeal.mp3')
 
 def special_card_handler(x):
 
@@ -82,7 +86,7 @@ def hit():
     comp_label = Label(main, image=compImg)
     comp_label.image = compImg
     comp_label.grid(column=2,row=1 )
-
+    play()
     game_logic(cardValue,compCardValue)
    
 # Set up the screen for player
@@ -101,6 +105,7 @@ file_menu = Menu(menubar)
 
 file_menu.add_command(
     label='Start Over',
+
     # ADD START OVER METHOD
 )
 file_menu.add_command(
@@ -121,6 +126,7 @@ main.rowconfigure(0, weight=2)
 main.rowconfigure(1, weight=2)
 main.rowconfigure(2, weight=2)
 
+
 # player button and css
 player_hit_btn = ttk.Button(
     main,
@@ -133,6 +139,16 @@ player_hit_btn.pack(
     expand=True
 )
 player_hit_btn.grid(column=0, row=2)
+
+PlayerText_label = Label(main, text='Player',bg='green',font='14' )
+PlayerText_label.grid(column=0,row=0,ipadx=10, ipady=10)
+
+label = Label(main, text='Computer',bg='green', font='14')
+label.grid(column=2,row=0,ipadx=10, ipady=10)
+
+messagebox.showinfo("Game Rules", "Click on hit to draw two cards, Player who has the higher card wins......\nBig bank takes little bank, Have fun !!!")
+
+
 
 # the function that starts the gui
 main.mainloop()  
