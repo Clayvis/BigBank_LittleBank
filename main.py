@@ -140,11 +140,12 @@ player_hit_btn.pack(
 )
 player_hit_btn.grid(column=0, row=2)
 
+# labels and css
 PlayerText_label = Label(main, text='Player',bg='green',font='14' )
 PlayerText_label.grid(column=0,row=0,ipadx=10, ipady=10)
 
-label = Label(main, text='Computer',bg='green', font='14')
-label.grid(column=2,row=0,ipadx=10, ipady=10)
+ComputerText_label = Label(main, text='Computer',bg='green', font='14')
+ComputerText_label.grid(column=2,row=0,ipadx=10, ipady=10)
 
 messagebox.showinfo("Game Rules", "Click on hit to draw two cards, Player who has the higher card wins......\nBig bank takes little bank, Have fun !!!")
 
